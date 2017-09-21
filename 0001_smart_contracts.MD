@@ -18,7 +18,8 @@ But for versions >=1.6 part about compiling smart contract is incorrect. Here is
 13. `personal.unlockAccount(account1, '12345');`
 14. ```var contractDeployed = testContract.new({data: "0x" + compilerOutput.contracts["contract.sol:test"].bin, gas: 1000000, from: account1}, function(e, contract){if(!e){if(!contract.address){console.log("Contract transaction send: Transaction Hash: "+contract.transactionHash+" waiting to be mined...");}else{console.log("Contract mined! Address: "+contract.address);console.log(contract);}}else{console.log(e)}});```
 Expected output: ```Contract transaction send: Transaction Hash: 0x4df25e70d41bdc92631fdc20b48474126ef107f91e8eaf33c99e012feb365821 waiting to be mined...
-Contract mined! Address: 0x392e608e31c264f6c30cf3848e74e476e602e5a2
-```
+Contract mined! Address: 0x392e608e31c264f6c30cf3848e74e476e602e5a2```
 15. `eth.getCode(contractDeployed.address)`
 16. `contractDeployed.multiply.call(6)`
+Expected output: `42`
+17. `miner.stop()`
